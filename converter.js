@@ -1,6 +1,8 @@
 class Converter {
     constructor() {
-
+        // Add this code inside the constructor
+        this.conversionHistory;
+        this.historyShown = false; // At first, it's set to false
     }
 
     static FtoC(f) {
