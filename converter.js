@@ -70,10 +70,45 @@ class Converter {
         }
     }
 	
+    static showHistory() {
+        this.historyShown = true;
+
+        // That condition checks to see if there already exists a ul element
+        if (document.getElementsByTagName("ul").length == 0) {
+            var divHistory = document.getElementById("history"); // Getting the div element (of id "history")
+
+            // Every document.createElement() method returns the object it creates, so we store them in a variable
+            var heading = document.createElement("h2"); // Creating an h2 DOM element (object of the DOM)
+            heading.textContent = "History"; // Setting the textContent property of the h2 element
+            divHistory.appendChild(heading); // Appending the heading (h2) object inside the div we just got
+
+            var ul = document.createElement("ul"); // Creating the ul element - stands for Unordered List
+            // The setAttribute() method receives two arguments, one's the attribute and the other's the value
+            ul.setAttribute("id", "items-list"); // We'll use this id to target the element later
+            divHistory.appendChild(ul); // Adding this element to the ul DOM element
+
+            // It will iterate for each element of the this.conversion property
+            for (let i = 0; i < this.conversionHistory.length; i++) {
+                var item = document.createElement("li"); // It creates a li (list item) DOM element
+                item.textContent = this.conversionHistory[i]; // Setting the text content for the list item
+                ul.appendChild(item); // Adding this element to the ul DOM element
+            }
+        }
+        else {
+            var ul = document.getElementById("items-list");
+
+            // This assumes there is already a ul element, and possibly some li elements inside it
+            var numberOfItems = document.getElementsByTagName("li").length; // Counting how many li elements there are
+            var item = document.createElement("li"); // Creating the li DOM element
+            // Setting the text for the textContent property
+            item.textContent = this.conversionHistory[numberOfItems]; // The numberOfItems' value is exactly the index we want 
+            ul.appendChild(item); // Appending the item to the unordered list
+        }
+    }
+	
 }
 
 var buttonConvert = document.getElementById("convert");
 	buttonConvert.onclick = function () {
 	Converter.convert();
 }
-	
