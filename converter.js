@@ -58,6 +58,15 @@ class Converter {
         result = value + " " + from + " is equivalent to " + result + " " + to;
         document.getElementById("result").textContent = result;
     }
+
+    static addToHistory(result) {
+        if (this.conversionHistory == undefined) {
+            this.conversionHistory = [result]; // An array containing one element: result
+        }
+        else {
+            this.conversionHistory[this.conversionHistory.length] = result;
+        }
+    }
 	
 }
 
@@ -65,4 +74,4 @@ var buttonConvert = document.getElementById("convert");
 	buttonConvert.onclick = function () {
 	Converter.convert();
 }
-    
+	
