@@ -57,6 +57,8 @@ class Converter {
         }
         result = value + " " + from + " is equivalent to " + result + " " + to;
         document.getElementById("result").textContent = result;
+    	
+    	this.addToHistory(result);
     }
 
     static addToHistory(result) {
