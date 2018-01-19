@@ -1,0 +1,28 @@
+body {
+    font-family: Roboto, Helvetica, sans-serif;
+    font-size: 1.3em;
+    text-align: center;
+    color: #333;
+}
+
+.converter {
+    background-color: ghostwhite;
+    width: 55%;
+    margin: 0 auto;
+    padding: 1.5em;
+}
+
+ul li {
+    list-style: none;
+}
+
+select, input {
+    padding: .5em;
+    margin: 0 .5em;
+}
+
+div {
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+}
