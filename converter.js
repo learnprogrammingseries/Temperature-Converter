@@ -23,3 +23,9 @@ class Converter {
     }
 
 }
+
+var buttonConvert = document.getElementById("convert");
+	buttonConvert.onclick = function () {
+	Converter.convert();
+}
+    
