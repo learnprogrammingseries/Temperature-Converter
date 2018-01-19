@@ -59,6 +59,9 @@ class Converter {
         document.getElementById("result").textContent = result;
     	
     	this.addToHistory(result);
+	    
+    	if (this.historyShown)
+            this.showHistory();
     }
 
     static addToHistory(result) {
