@@ -112,3 +112,8 @@ var buttonConvert = document.getElementById("convert");
 	buttonConvert.onclick = function () {
 	Converter.convert();
 }
+
+var buttonShowHistory = document.getElementById("show-history");
+	buttonShowHistory.onclick = function () {
+    	Converter.showHistory();
+}
