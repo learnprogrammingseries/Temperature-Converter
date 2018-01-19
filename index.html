@@ -10,6 +10,26 @@
 <body>
 
     <h1>Temperature Converter</h1>
+    
+    <form class="converter">
+        <label for="fromXdegrees">From</label>
+        <select name="fromXdegrees" id="fromXdegrees">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+        <label for="toYdegrees">to</label>
+        <select name="toYdegrees" id="toYdegrees">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit" selected>Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+        <input type="text" id="temperature">
+        <input type="button" value="Convert" id="convert">
+        <!-- the value attribute sets the button's text -->
+        <p id="result"></p>
+    </form>
+
 </body>
 
 </html>
